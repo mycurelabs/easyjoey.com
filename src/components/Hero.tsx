@@ -1,73 +1,86 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+'use client'
+
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/magicui/shimmer-button"
+import { motion } from "framer-motion"
+import { ChevronRight } from "lucide-react"
 
 export function Hero() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div
-          className="absolute left-[calc(50%-4rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary/30 to-primary/10 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
+    <section id="hero" className="relative w-full py-20 md:py-32 overflow-hidden">
+      <div className="container px-6">
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6 max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl font-bold tracking-tight leading-tight md:text-6xl lg:text-7xl">
+              More Time for Patients.{" "}
+              <span className="text-primary">Less Time on Paperwork.</span>
+            </h1>
+            <p className="mx-auto max-w-[800px] text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Filipino doctors spend 2+ hours daily on admin tasks. EasyJoey helps you reclaim that time — so every patient gets your full attention.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 mt-12"
+          >
+            <ShimmerButton
+              background="#009688"
+              shimmerColor="#ffffff"
+              className="h-11 px-8 text-sm sm:text-base font-semibold rounded-full"
+            >
+              Start Free Trial
+              <ChevronRight className="ml-1 size-4" />
+            </ShimmerButton>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-base font-semibold rounded-full h-11 px-6 hover:bg-secondary transition-all duration-300"
+              onClick={() => scrollToSection('pricing')}
+            >
+              View Pricing
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-full max-w-4xl mt-12"
+          >
+            <Image
+              src="/screenshots/easyjoey-dashboard.png"
+              alt="EasyJoey Dashboard - Your clinic's command center"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-xl shadow-2xl"
+              priority
+              quality={95}
+            />
+          </motion.div>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="mb-8 flex justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-muted-foreground ring-1 ring-border hover:ring-primary/50 transition-all">
-              Announcing our latest updates.{" "}
-              <a href="#features" className="font-semibold text-primary">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Simplify Your Clinic Management with{" "}
-            <span className="text-primary">Easy Joey</span>
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Streamline appointments, patient records, and billing all in one place. 
-            Easy Joey is the modern clinic management system designed for healthcare 
-            professionals who want to focus on what matters most - their patients.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button size="lg" className="group">
-              Get started
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" size="lg" className="group">
-              <Play className="mr-2 h-4 w-4" />
-              Watch demo
-            </Button>
-          </div>
-        </div>
-
-        {/* Hero image/dashboard preview */}
-        <div className="mt-16 flow-root sm:mt-24">
-          <div className="relative -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-            <div className="rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10 overflow-hidden">
-              <div className="bg-gradient-to-r from-primary to-primary/80 h-48 sm:h-64 lg:h-96 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">Dashboard Preview</h3>
-                  <p className="mt-2 text-white/80 text-sm sm:text-base">Your clinic&apos;s command center</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       </div>
     </section>
-  );
+  )
 }

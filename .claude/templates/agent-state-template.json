@@ -1,0 +1,113 @@
+{
+  "agentName": "[agent-name]",
+  "runId": "run_YYYYMMDD_HHMMSS",
+  "status": "running",
+  "currentPhase": 1,
+  "totalPhases": 3,
+  "startedAt": "2025-11-24T10:30:00Z",
+  "completedAt": null,
+  "duration": null,
+  "context": {
+    "userRequest": "[Original user request that triggered this agent]",
+    "target": "[Primary target: file path, directory, feature name, etc.]",
+    "parameters": {
+      "parameter1": "value1",
+      "parameter2": "value2",
+      "depth": 2,
+      "verbose": true
+    },
+    "previousResults": null
+  },
+  "phases": [
+    {
+      "phaseNumber": 1,
+      "name": "[Phase 1 Name]",
+      "status": "completed",
+      "startedAt": "2025-11-24T10:30:00Z",
+      "completedAt": "2025-11-24T10:35:00Z",
+      "duration": "5 minutes",
+      "description": "[What this phase does]",
+      "outputs": [
+        {
+          "type": "file",
+          "path": "/path/to/output/file.md",
+          "description": "[Description of what this file contains]"
+        },
+        {
+          "type": "report",
+          "path": "/path/to/report.md",
+          "description": "[Description of report contents]"
+        },
+        {
+          "type": "data",
+          "path": "/path/to/data.json",
+          "description": "[Description of data structure]"
+        }
+      ],
+      "metrics": {
+        "filesProcessed": 10,
+        "issuesFound": 5,
+        "timeElapsed": 300
+      },
+      "errors": []
+    },
+    {
+      "phaseNumber": 2,
+      "name": "[Phase 2 Name]",
+      "status": "in_progress",
+      "startedAt": "2025-11-24T10:35:05Z",
+      "completedAt": null,
+      "duration": null,
+      "description": "[What this phase does]",
+      "outputs": [],
+      "metrics": {},
+      "errors": [
+        {
+          "message": "[Error description]",
+          "severity": "warning",
+          "timestamp": "2025-11-24T10:37:00Z",
+          "context": {
+            "file": "/path/to/problematic/file.ts",
+            "line": 42,
+            "details": "[Additional error context]"
+          }
+        }
+      ]
+    },
+    {
+      "phaseNumber": 3,
+      "name": "[Phase 3 Name]",
+      "status": "pending",
+      "startedAt": null,
+      "completedAt": null,
+      "duration": null,
+      "description": "[What this phase does]",
+      "outputs": [],
+      "metrics": {},
+      "errors": []
+    }
+  ],
+  "results": {
+    "summary": null,
+    "metrics": {
+      "totalFilesAnalyzed": 0,
+      "totalIssuesFound": 0,
+      "criticalIssues": 0,
+      "highPriorityIssues": 0,
+      "mediumPriorityIssues": 0,
+      "lowPriorityIssues": 0
+    },
+    "artifacts": [],
+    "recommendations": []
+  },
+  "userAction": null,
+  "errors": [],
+  "metadata": {
+    "agentVersion": "1.0.0",
+    "claudeVersion": "sonnet-4-5",
+    "platform": "darwin",
+    "repository": "/Users/username/project",
+    "branch": "main",
+    "commit": "abc123def456"
+  }
+}

@@ -1,6 +1,6 @@
-# Easy Joey - Clinic Management System
+# EasyJoey - Clinic Management System
 
-A modern, SEO-friendly website for Easy Joey, a clinic management system designed for healthcare professionals.
+A modern, SEO-friendly website for EasyJoey, a clinic management system designed for healthcare professionals.
 
 ## Features
 
