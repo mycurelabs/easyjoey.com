@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Disable source maps in production to prevent code exposure
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;
