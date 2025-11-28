@@ -6,10 +6,10 @@ import "./globals.css"
 export const metadata: Metadata = {
   metadataBase: new URL("https://easyjoey.com"),
   title: {
-    default: "EasyJoey | Clinic Software for Filipino Doctors",
+    default: "EasyJoey | Clinic Management Software for Filipino Doctors",
     template: "%s | EasyJoey",
   },
-  description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time for what matters — your patients. Simple, offline-ready clinic software built for the Philippines.",
+  description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients. Simple, offline-ready clinic software for the Philippines.",
   keywords: [
     "clinic management software Philippines",
     "healthcare software Philippines",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     apple: "/easyjoey-favicons/apple-touch-icon.png",
   },
   openGraph: {
-    title: "EasyJoey | Clinic Software for Filipino Doctors",
-    description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time for what matters — your patients.",
+    title: "EasyJoey | Clinic Management Software for Filipino Doctors",
+    description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients.",
     type: "website",
     locale: "en_PH",
     url: "https://easyjoey.com",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EasyJoey | Clinic Software for Filipino Doctors",
-    description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time.",
+    title: "EasyJoey | Clinic Management Software for Filipino Doctors",
+    description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients.",
     creator: "@easyjoey_ph",
   },
   robots: {
