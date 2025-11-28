@@ -33,16 +33,8 @@ export function StructuredData() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "PHP",
-      priceValidUntil: "2025-12-31",
       availability: "https://schema.org/InStock",
       description: "Free forever for solo practitioners",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "500",
-      bestRating: "5",
-      worstRating: "1",
     },
     featureList: [
       "Electronic Medical Records",
