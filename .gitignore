@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project notes/prompts
+sticky-scroll-section-prompt.md
+harmonic-scribbling-glacier.md
+MYCURE-PLATFORM-OVERVIEW.md
+.claude

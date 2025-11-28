@@ -1,12 +1,30 @@
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { StructuredData } from "@/components/structured-data"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "EasyJoey | More Time for Patients",
-  description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time for what matters — your patients. Simple, offline-ready clinic software built for the Philippines.",
-  keywords: ["clinic management", "healthcare Philippines", "medical software", "EMR", "patient records", "prescription management", "EasyJoey", "offline clinic software"],
+  metadataBase: new URL("https://easyjoey.com"),
+  title: {
+    default: "EasyJoey | Clinic Management Software for Filipino Doctors",
+    template: "%s | EasyJoey",
+  },
+  description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients. Simple, offline-ready clinic software for the Philippines.",
+  keywords: [
+    "clinic management software Philippines",
+    "healthcare software Philippines",
+    "medical EMR system",
+    "patient records management",
+    "prescription management software",
+    "EasyJoey",
+    "offline clinic software",
+    "Filipino doctors software",
+    "clinic billing system",
+    "practice management Philippines",
+  ],
   authors: [{ name: "EasyJoey" }],
+  creator: "EasyJoey",
+  publisher: "EasyJoey",
   icons: {
     icon: [
       { url: "/easyjoey-favicons/favicon.ico" },
@@ -16,20 +34,32 @@ export const metadata: Metadata = {
     apple: "/easyjoey-favicons/apple-touch-icon.png",
   },
   openGraph: {
-    title: "EasyJoey | More Time for Patients",
-    description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time for what matters — your patients. Simple, offline-ready clinic software built for the Philippines.",
+    title: "EasyJoey | Clinic Management Software for Filipino Doctors",
+    description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients.",
     type: "website",
     locale: "en_PH",
+    url: "https://easyjoey.com",
     siteName: "EasyJoey",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EasyJoey | More Time for Patients",
-    description: "Filipino doctors spend 2+ hours daily on admin. EasyJoey helps you reclaim that time.",
+    title: "EasyJoey | Clinic Management Software for Filipino Doctors",
+    description: "Filipino doctors spend 2+ hours on admin daily. EasyJoey helps you reclaim that time for your patients.",
+    creator: "@easyjoey_ph",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://easyjoey.com",
   },
 }
 
@@ -49,6 +79,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <StructuredData />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
